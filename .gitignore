@@ -2,3 +2,5 @@
 src/*
 xiaozhi_server/*
 *.pyc
+*.pub
+test1
