@@ -14,7 +14,7 @@ import base64
 import wave
 
 # 添加项目根目录到路径
-sys.path.append('/home/ubuntu/py-xiaozhi')
+sys.path.append('./py-xiaozhi')
 
 # 配置日志
 logging.basicConfig(level=logging.INFO)
@@ -53,7 +53,7 @@ session_states: Dict[str, Dict[str, Any]] = {}
 class VoiceProcessingService:
     def __init__(self):
         # 创建聊天记录目录
-        os.makedirs("/home/ubuntu/py-xiaozhi/chatVoice", exist_ok=True)
+        os.makedirs("./py-xiaozhi/chatVoice", exist_ok=True)
 
     async def process_audio(self, session_id: str, audio_data: bytes):
         """处理音频数据并返回响应"""
@@ -64,7 +64,7 @@ class VoiceProcessingService:
 
             # 保存输入音频
             timestamp = int(time.time())
-            input_dir = f"/home/ubuntu/py-xiaozhi/chatVoice/{device_id}/input"
+            input_dir = f"./py-xiaozhi/chatVoice/{device_id}/input"
             os.makedirs(input_dir, exist_ok=True)
             input_filename = f"{device_id}_{timestamp}.wav"
             input_path = f"{input_dir}/{input_filename}"
@@ -91,7 +91,7 @@ class VoiceProcessingService:
             response_audio = self._generate_sine_wave(frequency=440, duration=2.0)
 
             # 保存输出音频
-            output_dir = f"/home/ubuntu/py-xiaozhi/chatVoice/{device_id}/output"
+            output_dir = f"./py-xiaozhi/chatVoice/{device_id}/output"
             os.makedirs(output_dir, exist_ok=True)
             output_filename = f"{device_id}_{timestamp + 1}.wav"
             output_path = f"{output_dir}/{output_filename}"
@@ -107,9 +107,9 @@ class VoiceProcessingService:
 
             state["messages"].append({
                 "intputText": recognized_text,
-                "intputFilePath": f"/chatVoice/{device_id}/input/{input_filename}",
+                "intputFilePath": f"./chatVoice/{device_id}/input/{input_filename}",
                 "outputText": response_text,
-                "outputFilePath": f"/chatVoice/{device_id}/output/{output_filename}"
+                "outputFilePath": f"./chatVoice/{device_id}/output/{output_filename}"
             })
 
             session_states[session_id] = state
@@ -319,7 +319,7 @@ async def save_chat_list(request: Request):
             return {"code": 400, "message": "消息列表为空"}
 
         # 确保设备目录存在
-        device_dir = f"/home/ubuntu/py-xiaozhi/chatVoice/{device_id}"
+        device_dir = f"./py-xiaozhi/chatVoice/{device_id}"
         os.makedirs(f"{device_dir}/input", exist_ok=True)
         os.makedirs(f"{device_dir}/output", exist_ok=True)
 
