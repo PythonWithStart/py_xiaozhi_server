@@ -26,7 +26,7 @@ class AppSettings(BaseSettings):
     max_message_size: int = 1024 * 1024  # 1MB
 
     # 上游WS服务配置
-    upstream_ws_host: str = "10.239.20.184"
+    upstream_ws_host: str = "192.168.1.4"
     upstream_ws_port: int = 8000
     upstream_ws_path: str = "/ws"
     upstream_use_ssl: bool = False
@@ -81,10 +81,10 @@ class UpstreamWSClient:
         try:
             self.conn = await websockets.connect(
                 self.ws_uri,
-                # additional_headers=self.headers,
+                additional_headers=self.headers,
                 ping_interval=None,
                 close_timeout=10.0,
-                extra_headers=self.headers
+                # extra_headers=self.headers
             )
             await self._send_hello()
             yield self
