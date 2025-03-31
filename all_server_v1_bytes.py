@@ -170,7 +170,7 @@ class ConnectionManager:
                     "detail": str(e)
                 })
 
-    async def proxy_message(self, websocket: WebSocket, message: Any):
+    async def proxy_message_old1(self, websocket: WebSocket, message: Any):
         """消息代理处理"""
         async with self.ws_client.connect() as client:
             # 根据消息类型发送数据
@@ -187,6 +187,32 @@ class ConnectionManager:
                     response = await client.recv()
                 elif isinstance(message, bytes):
                     response = await client.recv_bytes()
+                else:
+                    raise ValueError("Unsupported message type")
+
+                await self._broadcast_safe(response)
+            except Exception as e:
+                logger.error(f"Message handling failed: {str(e)}")
+                await websocket.send_json({
+                    "error": "Upstream service unavailable",
+                    "detail": str(e)
+                })
+
+
+    async def proxy_message(self, websocket: WebSocket,UpperClient: Any, message: Any):
+        """消息代理处理"""
+        async with self.ws_client.connect() as client:
+            if isinstance(message, bytes):
+                await UpperClient.send_bytes(message)
+            else:
+                raise ValueError("Unsupported message type")
+
+            try:
+                # 根据消息类型接收响应
+                if isinstance(message, str):
+                    response = await UpperClient.recv()
+                elif isinstance(message, bytes):
+                    response = await UpperClient.recv_bytes()
                 else:
                     raise ValueError("Unsupported message type")
 
@@ -238,20 +264,30 @@ manager = ConnectionManager()
 async def websocket_endpoint(websocket: WebSocket):
     await manager.connect_client(websocket)
     try:
-        while True:
+        async with manager().ws_client.connect() as client:
+            await client.send(json.dumps({
+                "type": "ready",
+                "message": "准备接收音频数据"
+            }))
 
-            message = await websocket.receive_text()
-            logger.debug(f"Received message: {message[:200]}...")
-            # todo 音频字节流 转成
-            # {
-            # 'type': 'stt',
-            # 'text': 'psychological 받는而鵐錵 나타난鵐椌而謂 ni 나타난  사이트櫁感 obstacle掘 부분은齿掘 pal accompanied',
-            # 'session_id': 'f39b9a72-5597-4a2e-9e47-63aa30b0406b'
-            # }
+            while True:
+                message = await websocket.receive_text()
+                logger.debug(f"Received message: {message[:200]}...")
+                # todo 添加一个时间检测和数据是否输入。
 
-            # 消息处理管道
-            await manager.proxy_message(websocket, message)
+                # todo 音频字节流 转成
+                # {
+                # 'type': 'stt',
+                # 'text': 'psychological 받는而鵐錵 나타난鵐椌而謂 ni 나타난  사이트櫁感 obstacle掘 부분은齿掘 pal accompanied',
+                # 'session_id': 'f39b9a72-5597-4a2e-9e47-63aa30b0406b'
+                # }
 
+                # 消息处理管道
+                await manager.proxy_message(websocket,client, message)
+            await client.send(json.dumps({
+                "type": "complete",
+                "message": "音频处理完成"
+            }))
     except WebSocketDisconnect as e:
         logger.info(f"Client disconnected: code={e.code}, reason={e.reason}")
         manager.disconnect_client(websocket)
