@@ -1,5 +1,4 @@
 # main.py (优化后)
-
 import json
 import asyncio
 import logging
@@ -11,7 +10,7 @@ import traceback
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from utils.connectionManager import ConnectionManager
-from utils.setting import UpstreamWSClient, settings
+from utils.connectionManager import UpstreamWSClient, settings
 
 # --------------------------
 # 日志配置

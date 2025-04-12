@@ -42,3 +42,23 @@ class AppSettings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_prefix="APP_")
 
 settings = AppSettings()
+
+
+# --------------------------
+# 配置类（支持类型注解）
+# --------------------------
+class DebugConfig:
+    # ws://192.168.1.4:8000
+    HOST: str = "localhost"  # 服务地址
+    # HOST: str = "192.168.1.4"  # 服务地址
+    PORT: int = 9800  # 服务端口
+    # PORT: int = 8000  # 服务端口
+    PATH: str = "/ws"  # WebSocket路径
+    USE_SSL: bool = False  # 是否启用wss
+    HEADERS: dict = {"session_id":"123123"}
+
+    TEST_MESSAGES: list[bytes] = []
+    STRESS_CLIENTS: int = 5  # 并发客户端数量
+    RECONNECT_RETRIES: int = 3  # 重连尝试次数
+    TIMEOUT: float = 10.0  # 超时时间（秒）
+    LOG_VERBOSE: bool = True  # 详细日志模式

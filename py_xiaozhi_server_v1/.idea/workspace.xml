@@ -5,169 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="613c2cb6-4ad6-417c-bf52-e88fd0a3bfd7" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/py_xiaozhi_server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/all_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/all_server_v1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/all_server_v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/bytes_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/config/camera_VL_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/config/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/debug_websocket.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/debug_websocket_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/debug_websocket_server_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/debug_websocket_v1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/debug_websocket_v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/link_proxy_server_work.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/link_proxy_server_work1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/link_proxy_server_work2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/proxy_server_work.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/pytest.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/requirement.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/application.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/application_copy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/application_copy_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/application_copy_2_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/application_v1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/audio_codecs/audio_codec.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/audio_processing/vad_detector.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/audio_processing/wake_word_detect.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/constants/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/display/base_display.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/display/cli_display.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/display/gui_display.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/iot/thing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/iot/thing_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/iot/things/CameraVL/Camera.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/iot/things/CameraVL/VL.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/iot/things/lamp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/iot/things/music_player.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/iot/things/query_bridge_rag.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/iot/things/speaker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/protocols/mqtt_protocol.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/protocols/protocol.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/protocols/websocket_protocol.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/utils/config_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/utils/logging_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/utils/system_info.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/src/utils/volume_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/connectionManager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/current_new_requirement.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/link_proxy_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/proxy_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/setting.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/config/assets/tts_notify.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/config/assets/wakeup_words.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/config/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/config/private_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/config/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/connection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/handle/abortHandle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/handle/functionHandler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/handle/helloHandle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/handle/intentHandler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/handle/iotHandle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/handle/receiveAudioHandle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/handle/sendAudioHandle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/handle/textHandle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/mcp/MCPClient.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/mcp/manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/asr/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/asr/doubao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/asr/fun_local.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/asr/sherpa_onnx_local.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/intent/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/intent/function_call/function_call.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/intent/intent_llm/intent_llm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/intent/nointent/nointent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/llm/AliBL/AliBL.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/llm/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/llm/coze/coze.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/llm/dify/dify.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/llm/fastgpt/fastgpt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/llm/gemini/gemini.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/llm/ollama/ollama.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/llm/openai/openai.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/llm/xinference/xinference.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/memory/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/memory/mem0ai/mem0ai.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/memory/mem_local_short/mem_local_short.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/memory/nomem/nomem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/aliyun.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/cozecn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/custom.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/doubao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/edge.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/fishspeech.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/gpt_sovits_v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/gpt_sovits_v3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/minimax.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/openai.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/siliconflow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/providers/tts/ttson.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/asr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/auth_code_gen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/dialogue.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/intent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/llm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/lock_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/memory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/p3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/tts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/utils/vad.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/core/websocket_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/mcp_server_settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/SenseVoiceSmall/chn_jpn_yue_eng_ko_spectok.bpe.model" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/SenseVoiceSmall/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/SenseVoiceSmall/configuration.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/SenseVoiceSmall/demo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/SenseVoiceSmall/example/en.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/SenseVoiceSmall/example/ja.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/SenseVoiceSmall/example/ko.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/SenseVoiceSmall/example/yue.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/SenseVoiceSmall/example/zh.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/snakers4_silero-vad/hubconf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/snakers4_silero-vad/src/silero_vad/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/snakers4_silero-vad/src/silero_vad/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/snakers4_silero-vad/src/silero_vad/data/silero_vad.jit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/snakers4_silero-vad/src/silero_vad/data/silero_vad.onnx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/snakers4_silero-vad/src/silero_vad/data/silero_vad_16k_op15.onnx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/snakers4_silero-vad/src/silero_vad/data/silero_vad_half.onnx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/snakers4_silero-vad/src/silero_vad/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/models/snakers4_silero-vad/src/silero_vad/utils_vad.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/music/一念千年_国风版.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/music/中秋月.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/music/廉波老矣，尚能饭否.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/performance_tester.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/change_role.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/get_news.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/get_time.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/get_weather.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/handle_device.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/handle_exit_intent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/hass_get_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/hass_init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/hass_play_music.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/hass_set_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/play_music.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/functions/plugin_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/loadplugins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/plugins_func/register.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../py_xiaozhi_server/xiaozhi_server/tmp/server.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/py_xiaozhi_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/.idea/py_xiaozhi_server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/all_server_v1_bytes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/link_proxy_server_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/link_proxy_server_work.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/link_proxy_server_work1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/link_proxy_server_work1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/link_proxy_server_work2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/link_proxy_server_work2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/proxy_server_work.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/proxy_server_work.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/server_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/test_all_server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/test_server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/test_server1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/test_server111.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/try.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/connectionManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/connectionManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/link_proxy_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/link_proxy_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/proxy_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/proxy_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/py_xiaozhi_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/py_xiaozhi_server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/link_proxy_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/link_proxy_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/proxy_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/setting.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,12 +75,14 @@
     "Python.link_proxy_server_work1.executor": "Run",
     "Python.link_proxy_server_work2.executor": "Run",
     "Python.new_proxy_server.executor": "Run",
+    "Python.proxy_server (1).executor": "Run",
     "Python.proxy_server.executor": "Debug",
     "Python.proxy_server_work.executor": "Run",
+    "Python.wav_to_code.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/makeMoneyProject/py_xiaozhi_server_v1/utils",
+    "last_opened_file_path": "D:/makeMoneyProject/py_xiaozhi_server_v1",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
@@ -235,30 +99,8 @@
       <recent name="D:\makeMoneyProject\py_xiaozhi_server_v1\code_old" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.link_proxy_server (1)">
+  <component name="RunManager" selected="Python.link_proxy_server">
     <configuration name="link_proxy_server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="py_xiaozhi_server" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/work_0411" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\makeMoneyProject\py_xiaozhi_server_v1\link_proxy_server.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="link_proxy_server_work1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py_xiaozhi_server" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -271,7 +113,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/link_proxy_server_work1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/link_proxy_server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -302,7 +144,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="new_proxy_server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="proxy_server (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py_xiaozhi_server" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -315,7 +157,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\makeMoneyProject\py_xiaozhi_server_v1\code_old\new_proxy_server.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/proxy_server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -346,13 +188,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="wav_to_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py_xiaozhi_server" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/wav_to_code.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.link_proxy_server (1)" />
+        <item itemvalue="Python.link_proxy_server" />
+        <item itemvalue="Python.proxy_server (1)" />
+        <item itemvalue="Python.wav_to_code" />
         <item itemvalue="Python.proxy_server" />
         <item itemvalue="Python.link_proxy_server_work2" />
-        <item itemvalue="Python.new_proxy_server" />
-        <item itemvalue="Python.link_proxy_server_work1" />
       </list>
     </recent_temporary>
   </component>
@@ -373,21 +237,5 @@
       <updated>1743693202762</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/setting.py</url>
-          <line>179</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/proxy_server.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

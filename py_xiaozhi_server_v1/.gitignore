@@ -3,5 +3,5 @@
 *.pub
 test1
 *.conf
-audio_text.txt
+temp/audio_text.txt
 current_new_requirement.txt
