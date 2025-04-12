@@ -5,3 +5,4 @@ test1
 *.conf
 temp/audio_text.txt
 current_new_requirement.txt
+.idea/*

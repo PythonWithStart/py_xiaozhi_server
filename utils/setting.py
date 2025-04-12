@@ -26,7 +26,7 @@ class AppSettings(BaseSettings):
     # 10.239.20.184:8000
     upstream_ws_host: str = "192.168.1.4"
     upstream_ws_port: int = 8000
-    upstream_ws_path: str = "/ws"
+    upstream_ws_path: str = "/xiaozhi/v1/"
     upstream_use_ssl: bool = False
 
     # 身份认证配置

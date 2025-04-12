@@ -135,6 +135,8 @@ async def websocket_endpoint(websocket: WebSocket):
                 await manager.proxy_message(client, message)
             except TimeoutError as e:
                 logger.error(f"No message received within timeout period + \n + {traceback.print_exc()}")
+            except asyncio.exceptions.CancelledError as e:
+                logger.error(f"No message received within timeout period + \n + {traceback.print_exc()}")
     except WebSocketDisconnect as e:
         logger.info(f"Client disconnected: code={e.code}, reason={e.reason}")
         manager.disconnect_client(websocket)

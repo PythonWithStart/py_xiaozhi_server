@@ -47,7 +47,7 @@ class ConnectionManager:
             raise ValueError("Unsupported message type")
 
         try:
-            print(f"{time.localtime()}UpperClient.recv()")
+            print(f"{time.strftime('%Y-%H-%D',time.localtime())} UpperClient.recv()")
             response = await asyncio.wait_for(UpperClient.recv(), timeout=0.5)
             await self._broadcast_safe(response)
         except TimeoutError:
@@ -90,11 +90,11 @@ class ConnectionManager:
             ]
 
         try:
-            print(f"{time.localtime()} _broadcast_safe1")
+            print(f"{time.strftime('%Y-%H-%D',time.localtime())} _broadcast_safe1")
             if len(tasks) > 0:
-                print(f"{time.localtime()} _broadcast_safe2")
+                print(f"{time.strftime('%Y-%H-%D',time.localtime())} _broadcast_safe2")
                 await asyncio.gather(*tasks)
-                print(f"{time.localtime()} _broadcast_safe3")
+                print(f"{time.strftime('%Y-%H-%D',time.localtime())} _broadcast_safe3")
         except Exception as e:
             logger.error(f"Broadcast error: {str(e)}")
 
