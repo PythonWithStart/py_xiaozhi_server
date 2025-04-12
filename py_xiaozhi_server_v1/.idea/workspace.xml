@@ -25,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/link_proxy_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/link_proxy_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/proxy_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/proxy_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/../py_xiaozhi_server/work_0411/setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/py_xiaozhi_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/py_xiaozhi_server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/link_proxy_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/link_proxy_server.py" afterDir="false" />
@@ -81,7 +82,7 @@
     "Python.wav_to_code.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "D:/makeMoneyProject/py_xiaozhi_server_v1",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -94,6 +95,7 @@
       <recent name="D:\makeMoneyProject\py_xiaozhi_server" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\makeMoneyProject\py_xiaozhi_server_v1\temp" />
       <recent name="D:\makeMoneyProject\py_xiaozhi_server_v1\utils" />
       <recent name="D:\makeMoneyProject\py_xiaozhi_server_v1" />
       <recent name="D:\makeMoneyProject\py_xiaozhi_server_v1\code_old" />
