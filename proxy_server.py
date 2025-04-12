@@ -53,15 +53,18 @@ async def websocket_endpoint(websocket: WebSocket):
             "Client-Id": websocket.headers.get("Client-Id", ""),
             "session_id": websocket.headers.get("session_id", "")
         }
-
         # 使用session_id获取或创建客户端
         session_id = headers.get("session_id")
         if not session_id:
             session_id = md5(str(headers)).hexdigest()
             headers["session_id"] = session_id
 
-        client = await UpstreamWSClient.get_instance(status="start", headers=headers)
-        manager.client_map[session_id] = client
+        current_client = manager.client_map.get("session_id")
+        if current_client is None:
+            client = await UpstreamWSClient.get_instance(status="start", headers=headers)
+            manager.client_map[session_id] = client
+        else:
+            client =  current_client
 
         await client.send(json.dumps({
             "type": "listen",
