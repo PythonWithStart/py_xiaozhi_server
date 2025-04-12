@@ -1,0 +1,262 @@
+2025-03-29 23:00:38 - 0.1.16_SiFuChEdnofu - core.utils.vad - INFO - core.utils.vad - SileroVAD
+2025-03-29 23:03:34 - 0.1.16_SiFuChEdnofu - core.utils.vad - INFO - core.utils.vad - SileroVAD
+2025-03-29 23:12:38 - 0.1.16_SiFuChEdnofu - core.utils.vad - INFO - core.utils.vad - SileroVAD
+2025-03-29 23:12:57 - 0.1.16_SiFuChEdnofu - core.providers.asr.fun_local - INFO - core.providers.asr.fun_local - funasr version: 1.2.6.
+2025-03-29 23:14:55 - 0.1.16_SiFuChEdnofu - core.utils.vad - INFO - core.utils.vad - SileroVAD
+2025-03-29 23:15:14 - 0.1.16_SiFuChEdnofu - core.providers.asr.fun_local - INFO - core.providers.asr.fun_local - funasr version: 1.2.6.
+2025-03-29 23:16:23 - 0.1.16_SiFuChEdnofu - core.utils.vad - INFO - core.utils.vad - SileroVAD
+2025-03-29 23:16:45 - 0.1.16_SiFuChEdnofu - core.providers.asr.fun_local - INFO - core.providers.asr.fun_local - funasr version: 1.2.6.
+2025-03-29 23:16:48 - 0.1.16_SiFuChEdnofu - core.websocket_server - INFO - core.websocket_server - Server is running at ws://192.168.1.4:8000
+2025-03-29 23:16:48 - 0.1.16_SiFuChEdnofu - core.websocket_server - INFO - core.websocket_server - =======上面的地址是websocket协议地址，请勿用浏览器访问=======
+2025-03-29 23:21:32 - 0.1.16_SiFuDeEdnofu - core.utils.vad - INFO - core.utils.vad - SileroVAD
+2025-03-29 23:21:57 - 0.1.16_SiFuDeEdnofu - core.providers.asr.fun_local - INFO - core.providers.asr.fun_local - funasr version: 1.2.6.
+2025-03-29 23:21:59 - 0.1.16_SiFuDeEdnofu - core.websocket_server - INFO - core.websocket_server - Server is running at ws://192.168.1.4:8000
+2025-03-29 23:21:59 - 0.1.16_SiFuDeEdnofu - core.websocket_server - INFO - core.websocket_server - =======上面的地址是websocket协议地址，请勿用浏览器访问=======
+2025-03-30 08:45:00 - 0.1.16_SiFuDeEdnofu - core.utils.vad - INFO - core.utils.vad - SileroVAD
+2025-03-30 08:45:46 - 0.1.16_SiFuDeEdnofu - core.providers.asr.fun_local - INFO - core.providers.asr.fun_local - funasr version: 1.2.6.
+2025-03-30 08:45:52 - 0.1.16_SiFuDeEdnofu - core.websocket_server - INFO - core.websocket_server - Server is running at ws://192.168.1.4:8000
+2025-03-30 08:45:52 - 0.1.16_SiFuDeEdnofu - core.websocket_server - INFO - core.websocket_server - =======上面的地址是websocket协议地址，请勿用浏览器访问=======
+2025-03-30 08:46:32 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:33 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:34 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:34 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:34 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:34 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:34 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:34 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:34 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:34 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:35 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:36 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:36 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:36 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:38 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:38 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:38 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:39 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:39 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:39 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:46:39 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:46:39 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    self.headers = dict(ws.request.headers)
+                        ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:46:39 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:54:49 - 0.1.16_SiFuDeEdnofu - core.utils.vad - INFO - core.utils.vad - SileroVAD
+2025-03-30 08:55:10 - 0.1.16_SiFuDeEdnofu - core.providers.asr.fun_local - INFO - core.providers.asr.fun_local - funasr version: 1.2.6.
+2025-03-30 08:55:14 - 0.1.16_SiFuDeEdnofu - core.websocket_server - INFO - core.websocket_server - Server is running at ws://192.168.1.4:8000
+2025-03-30 08:55:14 - 0.1.16_SiFuDeEdnofu - core.websocket_server - INFO - core.websocket_server - =======上面的地址是websocket协议地址，请勿用浏览器访问=======
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:27 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:28 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:29 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:30 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:30 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:30 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:31 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:31 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:31 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:33 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:33 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:33 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
+2025-03-30 08:55:34 - 0.1.16_SiFuDeEdnofu - core.mcp.manager - WARNING - core.mcp.manager - 请检查mcp服务配置文件：data/.mcp_server_settings.json
+2025-03-30 08:55:34 - 0.1.16_SiFuDeEdnofu - core.connection - ERROR - core.connection - Connection error: 'WebSocketServerProtocol' object has no attribute 'request'-Traceback (most recent call last):
+  File "D:\makeMoneyProject\xiaozhi-esp32-server\main\xiaozhi-server\core\connection.py", line 110, in handle_connection
+    print(type(ws.request))
+               ^^^^^^^^^^
+AttributeError: 'WebSocketServerProtocol' object has no attribute 'request'
+
+2025-03-30 08:55:34 - 0.1.16_SiFuDeEdnofu - core.connection - INFO - core.connection - 连接资源已释放
