@@ -10,7 +10,8 @@ import traceback
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from utils.connectionManager import ConnectionManager
-from utils.connectionManager import UpstreamWSClient, settings
+from utils.connectionManager import UpstreamWSClient
+from utils.setting import settings
 
 # --------------------------
 # 日志配置
@@ -66,16 +67,25 @@ async def websocket_endpoint(websocket: WebSocket):
         else:
             client =  current_client
 
-        await client.send(json.dumps({
-            "type": "listen",
-            "message": "接收音频数据",
-            "mode": True,
-            "state": "start",
-            "session_id": session_id
-        }, ensure_ascii=False))
+        try:
+            await client.send_current_json(json.dumps({
+                "type": "listen",
+                "message": "接收音频数据",
+                "mode": True,
+                "state": "start",
+                "session_id": session_id
+            }, ensure_ascii=False))
+        except AttributeError as e:
+            await client.send_current_json(json.dumps({
+                "type": "listen",
+                "message": "接收音频数据",
+                "mode": True,
+                "state": "start",
+                "session_id": session_id
+            }, ensure_ascii=False))
 
         try:
-            first_recv_data =await  asyncio.wait_for(client.recv_bytes(),timeout=5)
+            first_recv_data =await  asyncio.wait_for(client.recv(),timeout=5)
             print("first 发送接收音频数据的返回数据",first_recv_data)
         except TimeoutError:
             print("first 发送接收音频数据的返回数据-无")
@@ -89,7 +99,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 message = await asyncio.wait_for(websocket.receive_bytes(), timeout=10)
                 # 当传入b'' 默认音频数据传入结束
                 if isinstance(message, bytes) and len(message) == 0 and receive_bytes_flag:
-                    await client.send(json.dumps({
+                    await client.send_current_json(json.dumps({
                         "type": "listen",
                         "message": "停止接收音频数据",
                         "mode": True,
