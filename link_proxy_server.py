@@ -6,7 +6,9 @@ import websockets
 from typing import Optional
 from datetime import datetime
 from utils.setting import DebugConfig
-from websockets.client import connect, WebSocketClientProtocol
+# from websockets.client import connect, WebSocketClientProtocol
+from websockets.server import WebSocketServerProtocol
+from websockets.client import connect
 # 在导入 opuslib 之前处理 opus 动态库
 from utils.system_info import setup_opus
 setup_opus()
@@ -78,7 +80,7 @@ class WebSocketDebugger:
         self.uri = f"{'wss' if self.cfg.USE_SSL else 'ws'}://{self.cfg.HOST}:{self.cfg.PORT}{self.cfg.PATH}"
         print(self.uri)
 
-    async def _connect(self) -> WebSocketClientProtocol:
+    async def _connect(self):
         """安全建立WebSocket连接"""
         try:
             return await connect(
@@ -87,7 +89,7 @@ class WebSocketDebugger:
                 close_timeout=self.cfg.TIMEOUT,
                 logger=logger if self.cfg.LOG_VERBOSE else None,
                 extra_headers=self.cfg.HEADERS
-                # additional_headers = self.cfg.HEADERS,
+                # additional_headers=self.cfg.HEADERS,
             )
         except Exception as e:
             logger.error(f"Connection failed: {e!r}")
