@@ -3,16 +3,19 @@ import time
 import hashlib
 import logging
 import asyncio
+from typing import Any, Optional, Set, Dict, Tuple
 import websockets
-from typing import Any
-from typing import Optional
-from fastapi import WebSocket
-from utils.setting import settings
-from starlette.websockets import WebSocketState
+from websockets import connect
+from websockets.server import WebSocketServer
 from websockets.client import WebSocketClientProtocol
+from websockets.typing import Data
+from fastapi import WebSocket
+from starlette.websockets import WebSocketState
+from .setting import settings
+from websockets.protocol import State
 
 # --------------------------
-# 日志配置
+# 日志配置（保持不变）
 # --------------------------
 logging.basicConfig(
     level=logging.INFO,
@@ -22,12 +25,12 @@ logging.basicConfig(
 logger = logging.getLogger("WSGateway")
 
 # --------------------------
-# 连接管理器 (优化广播逻辑)
+# 连接管理器优化（适配新版协议）
 # --------------------------
 class ConnectionManager:
     def __init__(self):
-        self.active_connections: set[WebSocket] = set()
-        self.client_map = {}  # 存储session_id到client的映射
+        self.active_connections: Set[WebSocket] = set()
+        self.client_map: Dict[str, WebSocket] = {}  # 类型注解优化
 
     async def connect_client(self, websocket: WebSocket):
         await websocket.accept()
@@ -38,78 +41,67 @@ class ConnectionManager:
         self.active_connections.discard(websocket)
         logger.info(f"Client disconnected: {websocket.client}")
 
-    async def proxy_message(self, UpperClient: Any, message: Any):
-        """消息代理处理"""
-        if isinstance(message, bytes):
-            print("send_bytes", message)
-            await UpperClient.send_bytes(message)
-        else:
-            raise ValueError("Unsupported message type")
-
+    async def proxy_message(self, upper_client: WebSocketClientProtocol, message: Data):
+        """适配新版 Data 类型注解"""
         try:
-            print(f"{time.localtime()}UpperClient.recv()")
-            response = await asyncio.wait_for(UpperClient.recv(), timeout=0.5)
-            await self._broadcast_safe(response)
-        except TimeoutError:
-            response = b'sent'
-            await self._broadcast_safe(response)
-        except Exception as e:
-            logger.error(f"Message handling failed: {str(e)}")
+            if isinstance(message, bytes):
+                await upper_client.send_bytes(message)
+                logger.debug("Sent binary message to upstream")
+            else:
+                await upper_client.send_current_json(message.decode('utf-8'))
+                logger.debug("Sent text message to upstream")
 
-    async def _broadcast_safe(self, message: Any):
-        """安全广播消息"""
+            # 使用新版协议的超时处理方式
+            try:
+                response = await asyncio.wait_for(upper_client.recv(), timeout=0.5)
+                await self._broadcast_safe(response)
+            except asyncio.TimeoutError:
+                response = b'sent'
+                await self._broadcast_safe(response)
+                
+        except websockets.ConnectionClosed as e:
+            logger.warning(f"Connection closed during proxy: {e.reason}")
+        except Exception as e:
+            logger.error(f"Message handling failed: {str(e)}", exc_info=True)
+
+    async def _broadcast_safe(self, message: Data):
+        """适配新版 Data 类型"""
         if not self.active_connections:
             return
 
-        print("message", type(message), message)
         tasks = []
+        for ws in self.active_connections:
+            if ws.application_state != WebSocketState.CONNECTED:
+                continue
 
-        if isinstance(message, str):
             try:
-                data = json.loads(message)
-                if isinstance(data, dict):
-                    # 如果是JSON消息，直接广播
-                    tasks = [
-                        ws.send_json(data)
-                        for ws in self.active_connections
-                        if ws.application_state == WebSocketState.CONNECTED
-                    ]
-            except json.JSONDecodeError:
-                # 如果不是JSON，作为文本发送
-                tasks = [
-                    ws.send_text(message)
-                    for ws in self.active_connections
-                    if ws.application_state == WebSocketState.CONNECTED
-                ]
-        elif isinstance(message, bytes):
-            # 二进制数据直接发送
-            tasks = [
-                ws.send_bytes(message)
-                for ws in self.active_connections
-                if ws.application_state == WebSocketState.CONNECTED
-            ]
+                if isinstance(message, bytes):
+                    tasks.append(ws.send_bytes(message))
+                elif isinstance(message, str):
+                    try:
+                        json.loads(message)  # 验证是否为JSON
+                        tasks.append(ws.send_json(message))
+                    except json.JSONDecodeError:
+                        tasks.append(ws.send_text(message))
+            except RuntimeError as e:
+                logger.warning(f"Skipping closed connection: {e}")
 
-        try:
-            print(f"{time.localtime()} _broadcast_safe1")
-            if len(tasks) > 0:
-                print(f"{time.localtime()} _broadcast_safe2")
+        if tasks:
+            try:
                 await asyncio.gather(*tasks)
-                print(f"{time.localtime()} _broadcast_safe3")
-        except Exception as e:
-            logger.error(f"Broadcast error: {str(e)}")
-
+            except Exception as e:
+                logger.error(f"Broadcast error: {str(e)}", exc_info=True)
 
 # --------------------------
-# WebSocket 客户端管理
+# WebSocket 客户端管理（适配15.x版本）
 # --------------------------
 class UpstreamWSClient:
     _instance: Optional["UpstreamWSClient"] = None
-    _instance_lock = asyncio.Lock()  # 单例创建锁
-    _connection_lock = asyncio.Lock()  # 连接操作锁
-    _session_map = {}  # 存储会话信息 {session_id: (client_instance, expire_time)}
+    _instance_lock = asyncio.Lock()
+    _connection_lock = asyncio.Lock()
+    _session_map: Dict[str, Tuple["UpstreamWSClient", float]] = {}  # 类型注解优化
 
     def __init__(self):
-        """初始化WebSocket客户端"""
         self.conn: Optional[WebSocketClientProtocol] = None
         self.headers = {
             "Authorization": f"Bearer {settings.auth_token}",
@@ -127,77 +119,68 @@ class UpstreamWSClient:
         self.initial_hello_sent = False
         self.current_status = None
         self.next_link = False
-        self.session_id = None
-        self.expire_time = None
+        self.session_id: Optional[str] = None
+        self.expire_time: Optional[float] = None
 
     @classmethod
     def _generate_session_id(cls, headers: dict) -> str:
-        """根据headers生成session_id"""
-        # 使用特定的header字段生成session_id
         key_fields = ['Authorization', 'Device-Id', 'Client-Id']
         key_values = [headers.get(field, '') for field in key_fields]
-        key_string = ''.join(key_values)
-        return hashlib.md5(key_string.encode()).hexdigest()
+        return hashlib.md5(''.join(key_values).encode()).hexdigest()
 
     @classmethod
     async def get_instance(cls, status=None, headers=None) -> "UpstreamWSClient":
-        """获取全局唯一实例（带会话管理）"""
         if not headers:
             raise ValueError("headers参数不能为空")
 
         session_id = cls._generate_session_id(headers)
 
         async with cls._instance_lock:
-            # 清理过期会话
             current_time = time.time()
-            expired_sessions = [
-                sid for sid, (_, expire) in cls._session_map.items()
-                if expire < current_time
-            ]
-            for sid in expired_sessions:
-                del cls._session_map[sid]
+            # 清理过期会话
+            cls._session_map = {
+                sid: data 
+                for sid, data in cls._session_map.items()
+                if data[1] > current_time
+            }
 
-            # 如果session_id存在且未过期，复用会话
             if session_id in cls._session_map:
                 instance, expire = cls._session_map[session_id]
-                if expire > current_time:
-                    instance.current_status = status
-                    return instance
+                instance.current_status = status
+                return instance
 
             # 创建新实例
             instance = cls()
             instance.session_id = session_id
             instance.current_status = status
-            instance.expire_time = current_time + 3600  # 1小时过期
-            instance.headers.update(headers)  # 更新headers
+            instance.expire_time = current_time + 3600
+            instance.headers.update(headers)
 
             try:
                 await instance._ensure_connection()
                 cls._session_map[session_id] = (instance, instance.expire_time)
             except Exception as e:
+                logger.error(f"创建实例失败: {e}", exc_info=True)
                 raise RuntimeError(f"创建WebSocket客户端实例失败: {e}")
 
             return instance
 
     async def _force_disconnect(self):
-        """强制断开当前连接"""
         if self.conn and not self.conn.closed:
             try:
-                self.conn.transport.close()
+                await self.conn.close()
                 self.next_link = True
             except Exception as e:
-                logger.debug(f"强制关闭连接时发生错误: {e}")
+                logger.debug(f"关闭连接错误: {e}")
+            finally:
+                self.connected = False
+                self.initial_hello_sent = False
+                self.conn = None
 
-            self.connected = False
-            self.initial_hello_sent = False
-            self.conn = None
-
-            # 从会话映射中移除
-            if self.session_id and self.session_id in self._session_map:
+            if self.session_id in self._session_map:
                 del self._session_map[self.session_id]
 
     async def _ensure_connection(self) -> None:
-        """确保连接已建立"""
         if self.connected and self.conn and not self.conn.closed:
             return
 
@@ -205,42 +188,40 @@ class UpstreamWSClient:
             if self.connected and self.conn and not self.conn.closed:
                 return
 
-            while self.reconnect_attempts < self.max_reconnect_attempts:
+            for attempt in range(self.max_reconnect_attempts):
                 try:
-                    self.conn = await websockets.connect(
+                    # 使用新版connect参数
+                    self.conn = await connect(
                         self.ws_uri,
                         ping_interval=30,
                         close_timeout=10.0,
-                        # work headers 处理
-                        extra_headers=self.headers,
-                        # home header处理
-                        # additional_headers = self.headers,
+                        # extra_headers=self.headers,  # 关键修改点：使用extra_headers
+                        additional_headers=self.headers,
+                        open_timeout=10.0,          # 新增推荐参数
+                        max_size=2**20               # 控制最大消息大小
                     )
+                    
                     self.connected = True
-                    # 发送初始化握手消息
-                    if not self.initial_hello_sent and self.current_status is not None and not self.next_link:
+                    if not self.initial_hello_sent and self.current_status and not self.next_link:
                         await self._send_hello()
                         self.initial_hello_sent = True
                         self.current_status = None
                         self.next_link = True
                     self.reconnect_attempts = 0
-                    logger.info(f"WebSocket连接成功: {self.ws_uri}")
+                    logger.info(f"连接成功: {self.ws_uri}")
                     return
 
+                except (websockets.ConnectionClosed, asyncio.TimeoutError) as e:
+                    logger.warning(f"连接尝试 {attempt+1} 失败: {str(e)}")
+                    await asyncio.sleep(min(2 ** attempt, 30))
                 except Exception as e:
-                    self.reconnect_attempts += 1
-                    if self.reconnect_attempts >= self.max_reconnect_attempts:
-                        self.connected = False
-                        raise RuntimeError(
-                            f"WebSocket连接失败，已达最大重试次数({self.max_reconnect_attempts}): {e}"
-                        )
+                    logger.error(f"意外连接错误: {str(e)}", exc_info=True)
+                    await asyncio.sleep(min(2 ** attempt, 30))
 
-                    # 指数退避重试
-                    delay = min(2 ** self.reconnect_attempts, 30)
-                    await asyncio.sleep(delay)
+            self.connected = False
+            raise RuntimeError(f"连接失败，已达最大尝试次数 {self.max_reconnect_attempts}")
 
     async def _send_hello(self):
-        """发送初始化握手消息"""
         hello_msg = {
             "type": "hello",
             "version": 1,
@@ -252,41 +233,34 @@ class UpstreamWSClient:
                 "frame_duration": settings.audio_frame_duration,
             }
         }
-        await self.send(json.dumps(hello_msg))
-        logger.info(f"发送初始化握手消息: {hello_msg}")
+        await self.conn.send(json.dumps(hello_msg))  # 使用直接发送方式
+        logger.info(f"已发送初始化握手消息")
 
-    async def send(self, message: str) -> None:
-        """安全发送文本消息"""
-        await self._ensure_connection()
-        await self.conn.send(message)
 
-    async def recv(self) -> str:
-        """安全接收文本消息"""
-        await self._ensure_connection()
-        return await self.conn.recv()
-
-    async def send_bytes(self, data: bytes) -> None:
-        """安全发送二进制数据"""
-        await self._ensure_connection()
+    async def send_current_json(self,data: str):
+        if not self.conn or self.conn.state is State.CLOSED:
+            await self._ensure_connection()
         await self.conn.send(data)
 
-    async def recv_bytes(self) -> bytes:
-        """安全接收二进制数据"""
-        await self._ensure_connection()
+    async def send_bytes(self, data: bytes) -> None:
+        if not self.conn or self.conn.state is State.CLOSED:
+            await self._ensure_connection()
+        await self.conn.send(data)
+
+    async def recv(self) -> Data:  # 使用新版Data类型
+        if not self.conn or self.conn.state is State.CLOSED:
+            await self._ensure_connection()
         return await self.conn.recv()
 
     async def close(self) -> None:
-        """关闭连接"""
-        if self.conn and not self.conn.closed:
+        if self.conn and not self.conn.state is State.CONNECTING:
             await self.conn.close()
         self.connected = False
-        self.initial_hello_sent = False  # 重置状态以便下次连接
+        self.initial_hello_sent = False
 
     async def __aenter__(self):
-        """支持异步上下文管理器"""
         await self._ensure_connection()
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
-        """退出上下文时自动关闭连接"""
         await self.close()
