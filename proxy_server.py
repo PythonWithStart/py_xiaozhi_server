@@ -10,7 +10,8 @@ import traceback
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from utils.connectionManager import ConnectionManager
-from utils.connectionManager import UpstreamWSClient, settings
+from utils.connectionManager import UpstreamWSClient
+from utils.setting import settings
 
 # --------------------------
 # 日志配置
@@ -53,26 +54,38 @@ async def websocket_endpoint(websocket: WebSocket):
             "Client-Id": websocket.headers.get("Client-Id", ""),
             "session_id": websocket.headers.get("session_id", "")
         }
-
         # 使用session_id获取或创建客户端
         session_id = headers.get("session_id")
         if not session_id:
             session_id = md5(str(headers)).hexdigest()
             headers["session_id"] = session_id
 
-        client = await UpstreamWSClient.get_instance(status="start", headers=headers)
-        manager.client_map[session_id] = client
-
-        await client.send(json.dumps({
-            "type": "listen",
-            "message": "接收音频数据",
-            "mode": True,
-            "state": "start",
-            "session_id": session_id
-        }, ensure_ascii=False))
+        current_client = manager.client_map.get("session_id")
+        if current_client is None:
+            client = await UpstreamWSClient.get_instance(status="start", headers=headers)
+            manager.client_map[session_id] = client
+        else:
+            client =  current_client
 
         try:
-            first_recv_data =await  asyncio.wait_for(client.recv_bytes(),timeout=5)
+            await client.send_current_json(json.dumps({
+                "type": "listen",
+                "message": "接收音频数据",
+                "mode": True,
+                "state": "start",
+                "session_id": session_id
+            }, ensure_ascii=False))
+        except AttributeError as e:
+            await client.send_current_json(json.dumps({
+                "type": "listen",
+                "message": "接收音频数据",
+                "mode": True,
+                "state": "start",
+                "session_id": session_id
+            }, ensure_ascii=False))
+
+        try:
+            first_recv_data =await  asyncio.wait_for(client.recv(),timeout=5)
             print("first 发送接收音频数据的返回数据",first_recv_data)
         except TimeoutError:
             print("first 发送接收音频数据的返回数据-无")
@@ -86,7 +99,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 message = await asyncio.wait_for(websocket.receive_bytes(), timeout=10)
                 # 当传入b'' 默认音频数据传入结束
                 if isinstance(message, bytes) and len(message) == 0 and receive_bytes_flag:
-                    await client.send(json.dumps({
+                    await client.send_current_json(json.dumps({
                         "type": "listen",
                         "message": "停止接收音频数据",
                         "mode": True,
@@ -131,6 +144,8 @@ async def websocket_endpoint(websocket: WebSocket):
                 logger.info(f"Received message: {len(message)} types...")
                 await manager.proxy_message(client, message)
             except TimeoutError as e:
+                logger.error(f"No message received within timeout period + \n + {traceback.print_exc()}")
+            except asyncio.exceptions.CancelledError as e:
                 logger.error(f"No message received within timeout period + \n + {traceback.print_exc()}")
     except WebSocketDisconnect as e:
         logger.info(f"Client disconnected: code={e.code}, reason={e.reason}")
